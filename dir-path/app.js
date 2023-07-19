@@ -5,6 +5,7 @@ const invokeAction = async ({action, id, title, author}) => {
         case "getAll":
             const allBooks = await books.getAll();
             console.log(allBooks);
+            console.log(allBooks[0]);
             break;
         case "getById": 
             const oneBook = await books.getById(id);
@@ -18,17 +19,17 @@ const invokeAction = async ({action, id, title, author}) => {
             const updateBook = await books.updateById(id, {title, author});
             console.log(updateBook);
             break;
-        case "removeById":
-            const deleteBook = await books.removeById(id);
-            console.log(deleteBook);
-            break;
+        // case "removeById":
+        //     const deleteBook = await books.removeById(id);
+        //     console.log(deleteBook);
+        //     break;
         default: 
             console.log("Unknown action");
     }
 }
 
-// invokeAction({action: "getAll"});
-// invokeAction({action: "getById", id: "u9kgwNWGi3uUUwh0b8V49"});
-// invokeAction({action: "add", title: "Worm", author: "Джон"});
-// invokeAction({action: "updateById", id: "EFTT2Z1Qxwd9RLSiRGPvI", title: "Ward", author: "Джон Маккрей"});
-invokeAction({action: "removeById", id: "EFTT2Z1Qxwd9RLSiRGPvI"})
+invokeAction({action: "getAll"});
+invokeAction({action: "getById", id: "YxhM4QDxPeA3SmPHcEZPJ"});
+invokeAction({action: "add", title: "Worm", author: "Джон"});
+invokeAction({action: "updateById", id: "EFTT2Z1Qxwd9RLSiRGPvI", title: "Ward", author: "Джон Маккрей"});
+// invokeAction({action: "removeById", id: "EFTT2Z1Qxwd9RLSiRGPvI"})
